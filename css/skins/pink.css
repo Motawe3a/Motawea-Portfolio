@@ -1,0 +1,36 @@
+:root {
+    --background-dark : #f2f2fc;
+    --background-light : #fdf9ff;
+    --heading : #302e4d;
+    --text : #504e70;
+    --border-darker : #d4d4e3;
+    --border-light : #e8dfec;
+    --pink : #ec1839;
+    --blue : #2196f3;
+    --orange : #fa5b0f;
+    --yellow : #ffb400;
+    --green : #72b626;
+}
+
+.aside .logo a::before { 
+    border-top: 4px solid  var(--pink);
+    border-left: 4px solid  var(--pink);
+}
+.aside .logo a::after { 
+    border-right: 4px solid  var(--pink);
+    border-bottom: 4px solid  var(--pink);
+}
+
+.aside .nav li a:hover, 
+.aside .nav li a.active{ 
+    color: var(--pink);
+}
+
+.aside .nav-toggler span,
+.aside .nav-toggler span::before, 
+.aside .nav-toggler span::after,
+.home .intro .social a{ 
+    background-color: var(--pink);
+}
+
+.home .intro .social a{

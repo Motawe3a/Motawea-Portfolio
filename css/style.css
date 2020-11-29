@@ -1,0 +1,241 @@
+
+ /*Font Awesome Free Icon*/
+ @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+ /*Google fonts*/
+ @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Rubik:500,700,900&display=swap');
+
+ /* general */
+ 
+ body {
+     margin: 0;
+     line-height: 1.5;
+     font-size: 16px;
+     font-family: 'Montserrat', sans-serif;
+     font-weight: 400;
+ }
+ * {
+     margin: 0;
+     padding: 0;
+     outline: none;
+     text-decoration: none;
+     box-sizing: border-box;
+ }
+
+ :root {
+     --background-dark : #f2f2fc;
+     --background-light : #fdf9ff;
+     --heading : #302e4d;
+     --text : #504e70;
+     --border-darker : #d4d4e3;
+     --border-light : #e8dfec;
+     --pink : #ec1839;
+     --blue : #2196f3;
+     --orange : #fa5b0f;
+     --yellow : #ffb400;
+     --green : #72b626;
+ }
+
+ ::before,::after {
+     box-sizing: border-box;
+ }
+
+ .section{
+     background-color: var(--background-dark);
+     min-height: 100vh;
+     display: block;
+ }
+ .main-content {
+     padding-left: 270px;
+ }
+
+ .container {
+     max-width: 1100px;
+     width: 100%;
+     margin: auto;
+ }
+
+ .shadow-dark {
+     -webkit-box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+ }
+
+ /* Aside */
+
+ .aside {
+     width: 270px;
+     background-color: var(--background-light);
+     position: fixed;
+     height: 100%;
+     left: 0;
+     top: 0;
+     z-index: 10;
+     border-right:1px solid var(--border-light);
+     padding: 30px;
+ }
+
+ .aside .logo {
+     padding: 30px 0;
+ }
+
+ .aside .logo a {
+     font-size: 40px;
+     color: var(--heading);
+     font-family: 'Rubik', sans-serif;
+     font-weight: 700;
+     text-decoration: none;
+     display: inline-block;
+     position: relative;
+     padding: 0 10px;
+     line-height: 50px;
+ }
+ .aside .logo a::before { 
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 0;
+    left: 0;
+ }
+ .aside .logo a::after { 
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    bottom: 0;
+    right: 0;
+ }
+
+ .aside .nav-toggler {
+     height: 40px;
+     width: 45px;
+     border: 1px solid var(--border-darker);
+     cursor: pointer;
+     position: fixed;
+     left: 300px;
+     top: 30px;
+     z-index: 11;
+     border-radius: 5px;
+     background-color: var(--background-light);
+     /* display: -ms-flexbox;
+     display: flex; */
+     display: none;
+     -ms-flex-align: center;
+     align-items: center;
+     -ms-flex-pack: center;
+     justify-content: center;
+ }
+
+ .aside .nav-toggler span{
+    position: relative;
+    height: 2px;
+    width: 18px;
+    display: inline-block;
+}
+ .aside .nav-toggler span::before{
+    content: '';
+    height: 2px;
+    width: 18px;
+    position: absolute;
+    top: -6px;
+    left: 0;
+}
+ .aside .nav-toggler span::after{
+    content: '';
+    height: 2px;
+    width: 18px;
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+
+ .aside .nav{
+     list-style: none;
+     margin: 88px 0;
+     padding: 0;
+}
+
+.aside .nav li {
+    display: block;
+}
+.aside .nav li a:not(.active):hover{ 
+    padding-left: 5px;
+}
+
+.aside .nav li a{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--heading);
+    text-decoration: none;
+    line-height: 45px;
+    display: block;
+    border-bottom: 1px solid var(--border-light);
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.aside .nav li a .fa{
+    margin-right: 5px;
+}
+    
+.aside .copyright-text {
+    font-size: 13px;
+    color: #7d7d7d; 
+ }
+
+ /* Home */
+
+ .home {
+     height: 100vh;
+     display: -ms-flexbox;
+     display: flex;
+ }
+
+ .home .intro{
+     text-align: center;
+ }
+ 
+ .home .intro img{
+     height: 200px;
+     width: 200px;
+     border-radius: 50%;
+     display: inline-block;
+     border: 8px solid #fff;
+ }
+ .home .intro h1{
+     color: var(--heading);
+     font-size: 30px;
+     font-family: 'Rubik', sans-serif;
+     font-weight: 700;
+     margin: 20px 0 5px;
+ }
+
+.home .intro p {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 22p;
+    color: #504e70;
+}
+
+.home .intro .social {
+    margin-top: 25px;
+}
+.home .intro .social a{
+    height: 35px;
+    width: 35px;
+    display: inline-block;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    margin: 0 4px;
+    border-radius: 50%;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.home .intro .social a:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
