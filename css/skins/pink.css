@@ -20,12 +20,14 @@
     border-right: 4px solid  var(--pink);
     border-bottom: 4px solid  var(--pink);
 }
+.service .service-item .service-item-inner .icon .fa,
 .about .about-content .about-text h3 span,
 .aside .nav li a:hover, 
 .aside .nav li a.active{ 
     color: var(--pink);
 }
 .btn,
+.service .service-item .service-item-inner:hover .icon,
 .about .skills .skill-item .progress-in,
 .about .about-content .timeline .timeline-item::before,
 .about .about-content .timeline .circle-dot,
