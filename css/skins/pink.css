@@ -22,6 +22,7 @@
 }
 .service .service-item .service-item-inner .icon .fa,
 .about .about-content .about-text h3 span,
+.portfolio .portfolio-filter button.active,
 .aside .nav li a:hover, 
 .aside .nav li a.active{ 
     color: var(--pink);
@@ -40,3 +41,6 @@
     background-color: var(--pink);
 }
 
+.portfolio .portfolio-filter button.active{
+    border-color: var(--pink);
+}

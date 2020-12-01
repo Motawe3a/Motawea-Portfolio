@@ -570,3 +570,29 @@
     line-height: 25px;
     margin: 0;
 }
+
+/* portfolio */
+
+.portfolio .portfolio-filter {
+    /* background-color: red; */
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.portfolio .portfolio-filter button{
+    color: var(--heading);
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 0 10px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+    padding-bottom: 2px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
