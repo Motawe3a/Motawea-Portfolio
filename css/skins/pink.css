@@ -20,6 +20,8 @@
     border-right: 4px solid  var(--pink);
     border-bottom: 4px solid  var(--pink);
 }
+
+.portfolio .portfolio-item .portfolio-info .icon .fa,
 .service .service-item .service-item-inner .icon .fa,
 .about .about-content .about-text h3 span,
 .portfolio .portfolio-filter button.active,
