@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
 
     <!-- color themes -->
-    <link rel="stylesheet" class="alternative-style" title="pink" href="./css/skins/pink.css" disabled>
+    <link rel="stylesheet" class="alternative-style" title="pink" href="./css/skins/pink.css">
     <link rel="stylesheet" class="alternative-style" title="blue" href="./css/skins/blue.css" disabled>
     <link rel="stylesheet" class="alternative-style" title="orange" href="./css/skins/orange.css" disabled>
     <link rel="stylesheet" class="alternative-style" title="yellow" href="./css/skins/yellow.css" disabled>
@@ -602,10 +602,17 @@
                     onclick="setActiveStyle('green')"></a>
             </li>
         </ul>
+        <h5>Body Skin</h5>
+        <label>
+            <input type="radio" class="body-skin" name="body-style" value="light" checked="true"> Light
+        </label>
+        <label>
+            <input type="radio" class="body-skin" name="body-style" value="dark"> Dark
+        </label>
     </div>
 
     <script src="./js/script.js"></script>
-    <script src="./js/styleSwitcher.js"></script>
+    <script src="./js/styleSwitcher.js" defer></script>
 </body>
 
 </html>

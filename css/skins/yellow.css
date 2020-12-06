@@ -20,7 +20,11 @@
 .service .service-item .service-item-inner .icon .fa,
 .about .about-content .about-text h3 span,
 .portfolio .portfolio-filter button.active,
-.aside .nav li a:hover, 
+body.dark .portfolio .portfolio-filter button.active,
+.aside .nav li a:hover,
+body.dark .aside .nav li a:hover,
+body.dark .aside .nav li a.active,
+.aside .nav li a:hover,d
 .aside .nav li a.active{ 
     color: var(--yellow);
 }
@@ -38,7 +42,7 @@
 .home .intro .social a{ 
     background-color: var(--yellow);
 }
-
+body.dark .portfolio .portfolio-filter button.active,
 .portfolio .portfolio-filter button.active{
     border-color: var(--yellow);
 }
