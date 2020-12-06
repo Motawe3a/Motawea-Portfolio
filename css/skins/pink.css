@@ -20,6 +20,7 @@
     border-right: 4px solid  var(--pink);
     border-bottom: 4px solid  var(--pink);
 }
+.contact .contact-info-item .icon .fa,
 .blog .blog-item-inner .blog-info .blog-tags a ,
 .portfolio .portfolio-item .portfolio-info .icon .fa,
 .service .service-item .service-item-inner .icon .fa,
