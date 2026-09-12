@@ -108,6 +108,8 @@
      max-width: 1100px;
      width: 100%;
      margin: auto;
+     padding-left: 15px;
+     padding-right: 15px;
  }
 
  .shadow-dark {
@@ -150,6 +152,8 @@
      z-index: 10;
      border-right:1px solid var(--border-light);
      padding: 30px;
+     -webkit-transition: left 0.3s ease;
+     transition: left 0.3s ease;
  }
 
  .aside .logo {
@@ -195,13 +199,13 @@
      z-index: 11;
      border-radius: 5px;
      background-color: var(--background-light);
-     /* display: -ms-flexbox;
-     display: flex; */
      display: none;
      -ms-flex-align: center;
      align-items: center;
      -ms-flex-pack: center;
      justify-content: center;
+     -webkit-transition: left 0.3s ease;
+     transition: left 0.3s ease;
  }
 
  .aside .nav-toggler span{
@@ -798,20 +802,32 @@ body.dark .shadow-dark {
 /* Responsive section */
 
 @media (max-width: 1199px) {
-    /* .aside {
-        left: -270px;
+    .aside {
+        left: -300px;
+    }
+    .aside.open {
+        left: 0;
     }
     .main-content {
         padding-left: 0;
-    } */
+    }
+    .aside .nav-toggler {
+        display: -ms-flexbox;
+        display: flex;
+        left: 20px;
+    }
+    .aside.open .nav-toggler {
+        left: 300px;
+    }
     .about .about-content .personal-info .info-item p span {
         display: block;
         margin-left: 0;
     }
 }
 
-@media (max-width: 991) {
-    .service .service-item {
+@media (max-width: 991px) {
+    .service .service-item,
+    .blog .blog-item {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%;
         max-width: 50%;
@@ -821,10 +837,21 @@ body.dark .shadow-dark {
     .about .about-content .experiance,
     .about .about-content .education,
     .about .about-content .skills,
-    .about .about-content .personal-infoو
-    .service .service-item ,
+    .about .about-content .personal-info,
+    .service .service-item,
     .blog .blog-item,
     .contact .contact-form .col-6 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .contact .contact-info-row {
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+    .contact .contact-info-item {
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
