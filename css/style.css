@@ -7,12 +7,42 @@
 
  /* general */
  
+ html {
+     scroll-behavior: smooth;
+ }
+
  body {
      margin: 0;
      line-height: 1.5;
      font-size: 16px;
      font-family: 'Montserrat', sans-serif;
      font-weight: 400;
+ }
+
+ /* Reveal-on-scroll animation, applied via script.js */
+ .reveal {
+     opacity: 0;
+     -webkit-transform: translateY(30px);
+     transform: translateY(30px);
+     -webkit-transition: opacity 0.6s ease, -webkit-transform 0.6s ease;
+     transition: opacity 0.6s ease, transform 0.6s ease;
+ }
+ .reveal.active {
+     opacity: 1;
+     -webkit-transform: translateY(0);
+     transform: translateY(0);
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+     html {
+         scroll-behavior: auto;
+     }
+     .reveal {
+         opacity: 1;
+         -webkit-transform: none;
+         transform: none;
+         transition: none;
+     }
  }
  * {
      margin: 0;
@@ -595,6 +625,15 @@
     border-radius: 10px;
     overflow: hidden;
     border: 1px solid var(--border-darker);
+    display: block;
+    -webkit-transition: -webkit-transform 0.35s ease, box-shadow 0.35s ease;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.blog .blog-item-inner:hover {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(48, 46, 77, 0.18);
 }
 
 .blog .blog-item-inner .blog-img {
