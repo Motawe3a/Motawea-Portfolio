@@ -739,34 +739,37 @@
     <!-- Theme-switcher -->
 
     <div class="style-switcher">
-        <div class="toggle-style-switcher">
-            <i class="fa fa-cog"></i>
+        <button type="button" class="toggle-style-switcher" aria-label="Open theme settings" aria-expanded="false">
+            <i class="fa fa-paint-brush"></i>
+        </button>
+        <div class="style-switcher-panel">
+            <p class="style-switcher-label">Color</p>
+            <ul class="color-options">
+                <li><a href="javascript:void(0)" class="color-swatch" title="pink" style="background-color: #ec1839; color: #ec1839;"
+                        onclick="setActiveStyle('pink')"></a>
+                </li>
+                <li><a href="javascript:void(0)" class="color-swatch" title="blue" style="background-color: #2196f3; color: #2196f3;"
+                        onclick="setActiveStyle('blue')"></a>
+                </li>
+                <li><a href="javascript:void(0)" class="color-swatch" title="yellow" style="background-color: #ffb400; color: #ffb400;"
+                        onclick="setActiveStyle('yellow')"></a>
+                </li>
+                <li><a href="javascript:void(0)" class="color-swatch" title="orange" style="background-color: #fa5b0f; color: #fa5b0f;"
+                        onclick="setActiveStyle('orange')"></a>
+                </li>
+                <li><a href="javascript:void(0)" class="color-swatch" title="green" style="background-color: #72b626; color: #72b626;"
+                        onclick="setActiveStyle('green')"></a>
+                </li>
+            </ul>
+            <p class="style-switcher-label">Mode</p>
+            <div class="mode-toggle">
+                <input type="radio" id="skin-light" class="body-skin" name="body-style" value="light" checked="true">
+                <label for="skin-light"><i class="fa fa-sun-o"></i> Light</label>
+                <input type="radio" id="skin-dark" class="body-skin" name="body-style" value="dark">
+                <label for="skin-dark"><i class="fa fa-moon-o"></i> Dark</label>
+                <span class="mode-toggle-thumb" aria-hidden="true"></span>
+            </div>
         </div>
-        <h5>Style Switcher</h5>
-        <ul>
-            <li><a href="javascript:void(0)" title="pink" style="background-color: #ec1839;"
-                    onclick="setActiveStyle('pink')"></a>
-            </li>
-            <li><a href="javascript:void(0)" title="blue" style="background-color: #2196f3;"
-                    onclick="setActiveStyle('blue')"></a>
-            </li>
-            <li><a href="javascript:void(0)" title="yellow" style="background-color: #ffb400;"
-                    onclick="setActiveStyle('yellow')"></a>
-            </li>
-            <li><a href="javascript:void(0)" title="orange" style="background-color: #fa5b0f;"
-                    onclick="setActiveStyle('orange')"></a>
-            </li>
-            <li><a href="javascript:void(0)" title="green" style="background-color: #72b626;"
-                    onclick="setActiveStyle('green')"></a>
-            </li>
-        </ul>
-        <h5>Body Skin</h5>
-        <label>
-            <input type="radio" class="body-skin" name="body-style" value="light" checked="true"> Light
-        </label>
-        <label>
-            <input type="radio" class="body-skin" name="body-style" value="dark"> Dark
-        </label>
     </div>
 
     <script src="./js/script.js"></script>

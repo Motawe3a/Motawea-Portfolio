@@ -1,4 +1,5 @@
 var links = document.querySelectorAll('.alternative-style');
+var swatches = document.querySelectorAll('.color-swatch');
 
 function setActiveStyle(color, save = true) {
     for (let i = 0; i < links.length; i++) {
@@ -7,6 +8,15 @@ function setActiveStyle(color, save = true) {
         } else {
             links[i].setAttribute('disabled','true');
         }
+    }
+    let accent = '';
+    for (let i = 0; i < swatches.length; i++) {
+        const isActive = color === swatches[i].getAttribute('title');
+        swatches[i].classList.toggle('active', isActive);
+        if (isActive) accent = getComputedStyle(swatches[i]).backgroundColor;
+    }
+    if (accent) {
+        document.querySelector('.style-switcher').style.setProperty('--accent', accent);
     }
     if (save) {
         try {
@@ -33,9 +43,10 @@ for (let i = 0; i < bodySkin.length; i++) {
     })
 }
 
-document.querySelector('.toggle-style-switcher').addEventListener('click',() => {
-    document.querySelector('.style-switcher').classList.toggle('open')
-    document.querySelector('.fa-cog').classList.toggle('fa-spin')
+const toggleBtn = document.querySelector('.toggle-style-switcher');
+toggleBtn.addEventListener('click', () => {
+    const isOpen = document.querySelector('.style-switcher').classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', isOpen);
 });
 
 // Restore the color theme and body skin the user last picked
