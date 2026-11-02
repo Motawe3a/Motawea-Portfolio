@@ -775,51 +775,30 @@
     font-weight: 400;
 }
  
-.contact .contact-form {
+/* Contact CTA — a plain mailto: link. There's no backend/form handler
+   on this static site, so a fake form that silently goes nowhere is
+   worse than an honest "email me" button. */
+.contact .contact-cta {
     -ms-flex: 0 0 100%;
     flex: 0 0 100%;
     max-width: 100%;
+    text-align: center;
 }
 
-.contact .contact-form .col-6 {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
-.contact .contact-form .col-12 {
-    -ms-flex: 0 0 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
-}
-
-.contact .contact-form .form-item {
-    margin-bottom: 30px;
-}
-
-.contact .contact-form .form-item .form-control:focus {
-    -webkit-box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
-.contact .contact-form .form-item .form-control {
-    width: 100%;
-    height: 50px;
-    border-radius: 25px;
-    border: 1px solid var(--border-darker);
-    padding: 10px 25px;
-    font-size: 16px;
+.contact .contact-cta-text {
+    font-size: 18px;
     color: var(--text);
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    margin-bottom: 25px;
 }
 
-.contact .contact-form .form-item textarea.form-control {
-    height: 140px;
-}
-
-.contact .contact-form .btn {
+.contact .contact-cta .btn {
     height: 50px;
-    padding: 0 50px;
+    line-height: 50px;
+    padding: 0 40px;
+}
+
+.contact .contact-cta .btn .fa {
+    margin-right: 6px;
 }
 
 
@@ -847,12 +826,6 @@ body.dark {
 body.dark .contact .contact-info-item p,
 body.dark .about .about-content .skills .skill-item .skill-precent {
     color: var(--text);
-}
-
-/* .form-control has no background in light mode (it sits directly on the
-   section background); give it a visible card surface in dark mode. */
-body.dark .contact-form .form-item .form-control {
-    background-color: var(--background-light);
 }
 
 body.dark .shadow-dark {
@@ -901,8 +874,7 @@ body.dark .shadow-dark {
     .about .about-content .skills,
     .about .about-content .personal-info,
     .service .service-item,
-    .blog .blog-item,
-    .contact .contact-form .col-6 {
+    .blog .blog-item {
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
