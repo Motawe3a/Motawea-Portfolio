@@ -1,5 +1,7 @@
 .style-switcher {
-    --accent: #ec1839;
+    /* --accent is inherited from :root / [data-theme] in style.css, so the
+       toggle button and active-swatch ring track the live theme color
+       without any JS needing to set it explicitly. */
     position: fixed;
     top: 20px;
     right: 0;
@@ -84,6 +86,8 @@
     height: 28px;
     width: 28px;
     display: block;
+    padding: 0;
+    border: none;
     border-radius: 50%;
     cursor: pointer;
     text-decoration: none;

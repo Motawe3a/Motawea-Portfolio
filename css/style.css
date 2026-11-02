@@ -67,11 +67,47 @@
      --track-bg : #e3e3e3;
      --border-darker : #d4d4e3;
      --border-light : #e8dfec;
-     --pink : #ec1839;
-     --blue : #2196f3;
-     --orange : #fa5b0f;
-     --yellow : #ffb400;
-     --green : #72b626;
+     --accent : #ec1839; /* pink, the default theme */
+ }
+
+ /* Color themes — set by styleSwitcher.js via document.documentElement's
+    data-theme attribute. Only --accent changes between themes, so adding
+    a new theme is a single line here (+ a swatch button in index.html)
+    instead of a whole new stylesheet. */
+ [data-theme="blue"]   { --accent: #2196f3; }
+ [data-theme="orange"] { --accent: #fa5b0f; }
+ [data-theme="yellow"] { --accent: #ffb400; }
+ [data-theme="green"]  { --accent: #72b626; }
+
+ .aside .logo a::before {
+     border-top: 4px solid var(--accent);
+     border-left: 4px solid var(--accent);
+ }
+ .aside .logo a::after {
+     border-right: 4px solid var(--accent);
+     border-bottom: 4px solid var(--accent);
+ }
+ .contact .contact-info-item .icon .fa,
+ .blog .blog-item-inner .blog-info .blog-tags a,
+ .service .service-item .service-item-inner .icon .fa,
+ .about .about-content .about-text h3 span,
+ .aside .nav li a:hover,
+ .aside .nav li a.active {
+     color: var(--accent);
+ }
+ .btn,
+ .blog .blog-item-inner .blog-img .blog-date,
+ .service .service-item .service-item-inner:hover .icon,
+ .about .skills .skill-item .progress-in,
+ .about .about-content .timeline .timeline-item::before,
+ .about .about-content .timeline .circle-dot,
+ .section-title h2::before,
+ .section-title h2::after,
+ .aside .nav-toggler span,
+ .aside .nav-toggler span::before,
+ .aside .nav-toggler span::after,
+ .home .intro .social a {
+     background-color: var(--accent);
  }
 
  ::before,::after {
@@ -723,7 +759,7 @@
 .contact .contact-info-item .icon .fa{
     font-size: 40px;
 }
-.contact .contact-info-item .h4 {
+.contact .contact-info-item h4 {
     font-size: 18px;
     font-weight: 700;
     color: var(--heading);
@@ -787,57 +823,36 @@
 }
 
 
-/* Dark Theme */
-body.dark .section {
-    background: #151515;
+/* Dark Theme
+   Nearly every selector above already paints itself with var(--heading),
+   var(--text), var(--background-light/dark) or var(--border-*). Because
+   of that, dark mode mostly just needs to redefine what those tokens
+   resolve to — the selectors that use them pick up the new values for
+   free through the custom-property cascade, instead of needing a parallel
+   copy of every selector that uses color. */
+body.dark {
+    --background-dark: #151515;
+    --background-light: #222222;
+    --heading: #fff;
+    --text: #e9e9e9;
+    --text-muted: #9d9d9d;
+    --track-bg: #393939;
+    --border-darker: #393939;
+    --border-light: #393939;
 }
 
-body.dark .contact-form .form-item .form-control,
-body.dark .blog .blog-item-inner .blog-info,
-body.dark .service .service-item .service-item-inner,
-body.dark .about .about-content .timeline,
-body.dark .aside {
-    background-color: #222222;
-}
-
-body.dark .contact .contact-info-item h4,
-body.dark .blog .blog-item-inner .blog-info .blog-title,
-body.dark .portfolio .portfolio-filter button,
-body.dark .service-item .service-item-inner h4,
-body.dark .about .about-content .timeline .timeline-title,
-body.dark .about-content h3.title,
-body.dark .about .about-content .skills .skill-item h5,
-body.dark .about .about-content .personal-info .info-item p,
-body.dark .about .about-content .about-text h3,
-body.dark .section-title h2,
-body.dark .home .intro h1,
-body.dark .aside .logo a,
-body.dark .aside .nav li a {
-    color: #fff;
-}
-
-body.dark .contact-form .form-item .form-control,
+/* Exceptions: these two are colored with var(--heading) in light mode
+   (to read as slightly bolder than ordinary body text) but should fall
+   back to the plain body-text color, not full white, once dark. */
 body.dark .contact .contact-info-item p,
-body.dark .blog .blog-item-inner .blog-info .blog-description,
-body.dark .blog .blog-item-inner .blog-info .blog-tags,
-body.dark .portfolio .portfolio-filter button,
-body.dark .service .service-item .service-item-inner p,
-body.dark .about .about-content .timeline .timeline-text,
-body.dark .about .about-content .timeline .timeline-date,
-body.dark .about .about-content .skills .skill-item .skill-precent,
-body.dark .about .about-content .personal-info .info-item p span,
-body.dark .about.about .about-content .about-text p,
-body.dark .home .intro p {
-    color: #e9e9e9;
+body.dark .about .about-content .skills .skill-item .skill-precent {
+    color: var(--text);
 }
 
-body.dark .contact-form .form-item .form-control,
-body.dark .blog .blog-item-inner,
-body.dark .service .service-item .service-item-inner,
-body.dark .about .about-content .timeline,
-body.dark .about .about-content .personal-info .info-item p,
-body.dark .aside .nav li a {
-    border-color: #393939;
+/* .form-control has no background in light mode (it sits directly on the
+   section background); give it a visible card surface in dark mode. */
+body.dark .contact-form .form-item .form-control {
+    background-color: var(--background-light);
 }
 
 body.dark .shadow-dark {

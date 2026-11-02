@@ -4,7 +4,6 @@ const DEFAULT_COLOR = 'pink';
 const DEFAULT_SKIN = 'light';
 const DARK_SKIN_CLASS = 'dark';
 
-const themeLinks = document.querySelectorAll('.alternative-style');
 const colorSwatches = document.querySelectorAll('.color-swatch');
 const bodySkinInputs = document.querySelectorAll('.body-skin');
 const styleSwitcher = document.querySelector('.style-switcher');
@@ -26,22 +25,15 @@ function readFromStorage(key, fallback) {
     }
 }
 
+// Themes are plain CSS: [data-theme="..."] on <html> redefines the single
+// --accent custom property in style.css, and every themed element already
+// reads from var(--accent) — so switching themes is just this one attribute.
 function setActiveStyle(color, save = true) {
-    themeLinks.forEach((link) => {
-        const isMatch = color === link.getAttribute('title');
-        link.toggleAttribute('disabled', !isMatch);
-    });
+    document.documentElement.setAttribute('data-theme', color);
 
-    let accentColor = '';
     colorSwatches.forEach((swatch) => {
-        const isActive = color === swatch.getAttribute('title');
-        swatch.classList.toggle('active', isActive);
-        if (isActive) accentColor = getComputedStyle(swatch).backgroundColor;
+        swatch.classList.toggle('active', color === swatch.dataset.theme);
     });
-
-    if (accentColor && styleSwitcher) {
-        styleSwitcher.style.setProperty('--accent', accentColor);
-    }
 
     if (save) saveToStorage(THEME_COLOR_KEY, color);
 }
@@ -61,6 +53,10 @@ function restoreSavedTheme() {
     setActiveStyle(savedColor, false);
     setBodySkin(savedSkin, false);
 }
+
+colorSwatches.forEach((swatch) => {
+    swatch.addEventListener('click', () => setActiveStyle(swatch.dataset.theme));
+});
 
 bodySkinInputs.forEach((input) => {
     input.addEventListener('change', () => setBodySkin(input.value));

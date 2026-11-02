@@ -16,13 +16,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:500,700,900&display=swap">
 
     <link rel="stylesheet" href="./css/style.css">
-
-    <!-- color themes -->
-    <link rel="stylesheet" class="alternative-style" title="pink" href="./css/skins/pink.css">
-    <link rel="stylesheet" class="alternative-style" title="blue" href="./css/skins/blue.css" disabled>
-    <link rel="stylesheet" class="alternative-style" title="orange" href="./css/skins/orange.css" disabled>
-    <link rel="stylesheet" class="alternative-style" title="yellow" href="./css/skins/yellow.css" disabled>
-    <link rel="stylesheet" class="alternative-style" title="green" href="./css/skins/green.css" disabled>
     <link rel="stylesheet" href="./css/styleSwitcher.css">
 </head>
 
@@ -753,20 +746,20 @@
         <div class="style-switcher-panel">
             <p class="style-switcher-label">Color</p>
             <ul class="color-options">
-                <li><a href="javascript:void(0)" class="color-swatch" title="pink" style="background-color: #ec1839; color: #ec1839;"
-                        onclick="setActiveStyle('pink')"></a>
+                <li><button type="button" class="color-swatch" data-theme="pink" aria-label="Pink theme"
+                        style="background-color: #ec1839; color: #ec1839;"></button>
                 </li>
-                <li><a href="javascript:void(0)" class="color-swatch" title="blue" style="background-color: #2196f3; color: #2196f3;"
-                        onclick="setActiveStyle('blue')"></a>
+                <li><button type="button" class="color-swatch" data-theme="blue" aria-label="Blue theme"
+                        style="background-color: #2196f3; color: #2196f3;"></button>
                 </li>
-                <li><a href="javascript:void(0)" class="color-swatch" title="yellow" style="background-color: #ffb400; color: #ffb400;"
-                        onclick="setActiveStyle('yellow')"></a>
+                <li><button type="button" class="color-swatch" data-theme="yellow" aria-label="Yellow theme"
+                        style="background-color: #ffb400; color: #ffb400;"></button>
                 </li>
-                <li><a href="javascript:void(0)" class="color-swatch" title="orange" style="background-color: #fa5b0f; color: #fa5b0f;"
-                        onclick="setActiveStyle('orange')"></a>
+                <li><button type="button" class="color-swatch" data-theme="orange" aria-label="Orange theme"
+                        style="background-color: #fa5b0f; color: #fa5b0f;"></button>
                 </li>
-                <li><a href="javascript:void(0)" class="color-swatch" title="green" style="background-color: #72b626; color: #72b626;"
-                        onclick="setActiveStyle('green')"></a>
+                <li><button type="button" class="color-swatch" data-theme="green" aria-label="Green theme"
+                        style="background-color: #72b626; color: #72b626;"></button>
                 </li>
             </ul>
             <p class="style-switcher-label">Mode</p>
