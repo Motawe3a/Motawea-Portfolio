@@ -1,9 +1,7 @@
 
- /*Font Awesome Free Icon*/
- @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
- /*Google fonts*/
- @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
- @import url('https://fonts.googleapis.com/css?family=Rubik:500,700,900&display=swap');
+ /* Font Awesome + Google Fonts (Montserrat, Rubik) are loaded as <link>
+    tags in index.html's <head>, not via @import here, so the browser can
+    fetch them in parallel instead of only after this file is parsed. */
 
  /* general */
  
