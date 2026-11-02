@@ -801,6 +801,30 @@
     margin-right: 6px;
 }
 
+.contact .contact-cta-fallback {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 14px;
+}
+
+.contact .contact-cta-copy {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-weight: 600;
+    color: var(--accent);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+}
+
+.contact .contact-cta-copy.copied {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
 
 /* Dark Theme
    Nearly every selector above already paints itself with var(--heading),

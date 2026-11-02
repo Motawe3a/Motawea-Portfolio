@@ -1,4 +1,4 @@
-const REVEAL_SELECTORS = '.section-title, .about-text, .personal-info, .skills, .education, .experiance, .service-item, .blog-item, .contact-info-item, .contact-form';
+const REVEAL_SELECTORS = '.section-title, .about-text, .personal-info, .skills, .education, .experiance, .service-item, .blog-item, .contact-info-item, .contact-cta';
 const PROJECT_CARD_STAGGER_STEP_S = 0.12;
 const PROJECT_CARDS_PER_ROW = 3;
 
@@ -54,3 +54,28 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 }, { threshold: 0.15 });
 
 document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+// Contact: "Email Me" uses a plain mailto: link, which only does something
+// if the browser has a mail app registered to handle it. As a fallback for
+// visitors who don't (or are in a context where mailto is blocked), let
+// them copy the address directly; both buttons flash a brief confirmation.
+const copyBtn = document.getElementById('contact-email-copy');
+
+if (copyBtn && navigator.clipboard) {
+    const copyLabel = copyBtn.textContent;
+
+    copyBtn.addEventListener('click', async () => {
+        try {
+            await navigator.clipboard.writeText(copyBtn.textContent);
+            copyBtn.textContent = 'Copied!';
+            copyBtn.classList.add('copied');
+            setTimeout(() => {
+                copyBtn.textContent = copyLabel;
+                copyBtn.classList.remove('copied');
+            }, 2000);
+        } catch (e) {
+            // Clipboard API unavailable/denied; the address is still
+            // selectable as plain text, so no further fallback needed.
+        }
+    });
+}
