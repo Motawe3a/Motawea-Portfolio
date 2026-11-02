@@ -47,9 +47,17 @@
  * {
      margin: 0;
      padding: 0;
-     outline: none;
      text-decoration: none;
      box-sizing: border-box;
+ }
+
+ /* Keep focus rings for keyboard users, hide them for mouse/touch clicks */
+ :focus {
+     outline: none;
+ }
+ :focus-visible {
+     outline: 2px solid var(--pink);
+     outline-offset: 2px;
  }
 
  :root {
@@ -326,8 +334,8 @@
     font-size: 16px;
     font-weight: 500;
     margin: 0;
-    line-height: 22p;
-    color: #504e70;
+    line-height: 22px;
+    color: var(--text);
 }
 
 .home .intro .social {
@@ -897,10 +905,3 @@ body.dark .shadow-dark {
     }
 }
 
-@media (max-width: 575px) {
-    .portfolio .portfolio-item {
-        -ms-flex: 0 0 100%;
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-}
